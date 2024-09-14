@@ -1,0 +1,52 @@
+<div class="login-overlay" [ngClass]="{ 'visible': isLoginFormVisible }">
+  <div class="login-card">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+      <div class="form-group">
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          required
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Email address"
+          #emailField="ngModel"
+          [ngClass]="{ 'is-invalid': emailField.invalid && emailField.touched }"
+          [ngModelOptions]="{ updateOn: 'blur' }"
+          [ngModel]="email"
+          [ngModelOptions]="{ updateOn: 'blur' }"
+          [ngClass]="{ 'is-invalid': emailField.invalid && emailField.touched }"
+          [ngModelOptions]="{ updateOn: 'blur' }"
+        />
+        <label for="email">Email address</label>
+        <div *ngIf="emailField.invalid && emailField.touched" class="invalid-feedback">
+          <div *ngIf="emailField.errors?.['required']">Email is required.</div>
+          <div *ngIf="emailField.errors?.['email']">Invalid email format.</div>
+          <div *ngIf="emailField.errors?.['invalidStart']">Email should not start with 'no'.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          required
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Password"
+          #passwordField="ngModel"
+          [ngClass]="{ 'is-invalid': passwordField.invalid && passwordField.touched }"
+        />
+        <label for="password">Password</label>
+        <div *ngIf="passwordField.invalid && passwordField.touched" class="invalid-feedback">
+          <div *ngIf="passwordField.errors?.['required']">Password is required.</div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+        <button type="button" class="btn btn-secondary" (click)="closeLoginForm()">Close</button>
+      </div>
+    </form>
+  </div>
+</div>

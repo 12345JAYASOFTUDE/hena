@@ -1,0 +1,74 @@
+ <!-- <div class="Main_container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-teal">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Art Gallery</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/login">Login</a>
+             
+              </li>
+            </ul>
+            <form class="d-flex ms-auto">
+              <input class="form-control me-2" type="search" placeholder="Search Artwork" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+</div> -->
+
+<div class="Main_container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-teal">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Art Gallery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toggleLoginForm()">Login</a>
+          </li>
+        </ul>
+        <form class="d-flex ms-auto">
+          <input class="form-control me-2" type="search" placeholder="Search Artwork" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conditionally show the login form -->
+  <app-login *ngIf="isLoginFormVisible" (close)="closeLoginForm()"></app-login>
+
+  
+  
+</div>
+
+  
+ 
+  
+
+
